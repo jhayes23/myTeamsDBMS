@@ -14,7 +14,7 @@ A random database topic will be assigned by the instructor to all the students. 
 
 |       Topic Description        |              Date Assigned                 |
 | ------------------------------ | ------------------------------------------ |
-| Write your database topic here | Write the date the topic was assigned here |
+| SW COMPANY DATABASE SYSTEM     | 2/7/2023                                   |
 
 
 All the work in this course is divided into two milestones, each of them has several checkpoints. Checkpoints are comulative. That's it, all checkpoints 
