@@ -25,7 +25,7 @@ All the work in this course is divided into two milestones, each of them has sev
 | ----------- | ----------------------------------------------------- |-----------|
 |     1       | M1: Product Summary                                   | Done      |
 |     2       | M1: Database Requirements                             | Done      |
-|     3       | M1: Entity Relationship Diagram (ERD)                 | TODO      |
+|     3       | M1: Entity Relationship Diagram (ERD)                 | Done      |
 |     4       | M1: DB Entities Description                           | TODO      |
 |     5       | M1: Entity Establishment Relationship Diagram  (EER)  | TODO      |
 |     6       | M1: Forward Engineering and Sample Data               | TODO      |
