@@ -406,11 +406,62 @@ CREATE TABLE IF NOT EXISTS `W2` (
   `employee_id` INT NOT NULL,
   `year` YEAR NOT NULL,
   `eDocPath` VARCHAR(4096) NOT NULL,
+  `total_income` INT NOT NULL,
+  `total_tax` INT NOT NULL,
+  `total_take_home` INT NOT NULL,
   PRIMARY KEY (`w2_id`),
   INDEX `fk_employee5_idx` (`employee_id` ASC) VISIBLE,
   CONSTRAINT `fk_employee5`
     FOREIGN KEY (`employee_id`)
     REFERENCES `Employee` (`employee_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `Notes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Notes` (
+  `notes_id` INT NOT NULL AUTO_INCREMENT,
+  `manager` INT NULL,
+  `candidate` INT NOT NULL,
+  `note` VARCHAR(1000) NOT NULL,
+  `public` TINYINT(0) NULL DEFAULT 1,
+  PRIMARY KEY (`notes_id`),
+  INDEX `fk_manager_note_idx` (`manager` ASC) VISIBLE,
+  INDEX `fk_candidate_note_idx` (`candidate` ASC) VISIBLE,
+  CONSTRAINT `fk_manager_note`
+    FOREIGN KEY (`manager`)
+    REFERENCES `Manager` (`manager_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_candidate_note`
+    FOREIGN KEY (`candidate`)
+    REFERENCES `Candidate` (`candidate_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `internalJobs`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `internalJobs` (
+  `internalJobs_id` INT NOT NULL AUTO_INCREMENT,
+  `position` INT NOT NULL,
+  `employee` INT NOT NULL,
+  `submittedDate` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`internalJobs_id`),
+  INDEX `fk_internal_employee_idx` (`employee` ASC) VISIBLE,
+  INDEX `fk_internal_position_idx` (`position` ASC) VISIBLE,
+  CONSTRAINT `fk_internal_employee`
+    FOREIGN KEY (`employee`)
+    REFERENCES `Employee` (`employee_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_internal_position`
+    FOREIGN KEY (`position`)
+    REFERENCES `Position` (`position_id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;

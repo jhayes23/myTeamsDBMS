@@ -5,6 +5,81 @@
 -- the database used to insert the data into.
 USE myTeamsDB;
 
+-- Region table inserts
+INSERT INTO `myTeamsDB`.`Region`
+(`region_name`,
+`region_UTC`)
+VALUES
+("West Coast",
+"UTC-7"),
+("South",
+"UTC-5"),
+("East Coast",
+"UTC-4");
+
+-- Budget table inserts
+INSERT INTO `Budget`
+(`amount_avail`)
+VALUES(
+555000
+),
+(612000
+),
+(910000
+),
+(13000
+);
+
+-- Company table inserts
+INSERT INTO `myTeamsDB`.`Company`
+(`region_id`,
+`address`,
+`city`,
+`state`,
+`zip`)
+VALUES
+(
+1,
+"10 Onion Ave",
+"Los Angeles",
+"CA",
+"90012"),
+(
+2,
+"15 Avocado Way",
+"Miami",
+"FL",
+"65958"),
+(
+3,
+"99 Problems",
+"Chicago",
+"IL",
+"45009");
+
+-- Department table inserts
+INSERT INTO `myTeamsDB`.`Department`
+(`company_id`,
+`budget_id`,
+`name`,
+`phone_number`)
+VALUES
+(1,
+1,
+"Operations",
+"500-567-9650"
+),
+(
+1,
+2,
+"Marketing",
+"500-567-9755"),
+(
+1,
+3,
+"Engineering",
+"500-567-9758");
+
 -- Employee table inserts
 INSERT INTO `myTeamsDB`.`Employee`
 (
@@ -47,12 +122,12 @@ VALUES
 "Senior Software Engineer",
 "Juan",
 "Garcia",
-5),
+3),
 (
 "IT Engineer",
 "Ignrid",
 "Brookes",
-4),
+2),
 (
 "Network Technician",
 "Sherrilyn",
@@ -64,18 +139,6 @@ UPDATE Employee
 SET TERMINATION_DATE = current_timestamp()
 WHERE employee_id = '2';
 
--- Budget table inserts
-INSERT INTO `Budget`
-(`amount_avail`)
-VALUES(
-555000
-),
-(612000
-),
-(910000
-),
-(13000
-);
 
 -- Candidate table inserts
 INSERT INTO `myTeamsDB`.`Candidate`
@@ -135,71 +198,34 @@ VALUES
 "FL");
 ;
 
--- Company table inserts
-INSERT INTO `myTeamsDB`.`Company`
-(`region_id`,
-`address`,
-`city`,
-`state`,
-`zip`)
-VALUES
-(
-1,
-"10 Onion Ave",
-"Los Angeles",
-"CA",
-"90012"),
-(
-2,
-"15 Avocado Way",
-"Miami",
-"FL",
-"65958"),
-(
-3,
-"99 Problems",
-"Chicago",
-"IL",
-"45009");
-
--- Department table inserts
-INSERT INTO `myTeamsDB`.`Department`
-(`company_id`,
-`budget_id`,
-`name`,
-`phone_number`)
-VALUES
-(1,
-1,
-"Operations",
-"500-567-9650"
-),
-(
-1,
-2,
-"Marketing",
-"500-567-9755"),
-(
-1,
-3,
-"Engineering",
-"500-567-9758");
 
 -- W2 table inserts
 INSERT INTO `myTeamsDB`.`W2`
 (`employee_id`,
 `year`,
-`eDocPath`)
+`eDocPath`,
+`total_income`,
+`total_tax`,
+`total_take_home`)
 VALUES
 (1,
 2021,
-"Documents/Financial/2021/1W2"),
+"Documents/Financial/2021/1W2",
+50000,
+30000,
+20000),
 (2,
 2021,
-"Documents/Financial/2021/2W2"),
+"Documents/Financial/2021/2W2",
+60000,
+3000,
+3000),
 (3,
 2021,
-"Documents/Financial/2021/3W2");
+"Documents/Financial/2021/3W2",
+50000,
+30000,
+20000);
 
 -- Manager table inserts
 INSERT INTO `myTeamsDB`.`Manager`
@@ -342,17 +368,7 @@ VALUES
 2,
 3);
 
--- Region table inserts
-INSERT INTO `myTeamsDB`.`Region`
-(`region_name`,
-`region_UTC`)
-VALUES
-("West Coast",
-"UTC-7"),
-("South",
-"UTC-5"),
-("East Coast",
-"UTC-4");
+
 
 -- Documents table inserts
 INSERT INTO `myTeamsDB`.`Documents`
@@ -441,3 +457,37 @@ VALUES
 "aloveletter@companyEmail.com",
 "aloveletter",
 "ifnqoeirf23SHA");
+INSERT INTO `myTeamsDB`.`internalJobs`
+(
+`position`,
+`employee`)
+VALUES
+(
+1,
+3),
+(
+2,
+3),
+(
+2,
+2);
+INSERT INTO `myTeamsDB`.`Notes`
+(
+`manager`,
+`candidate`,
+`note`,
+`public`)
+VALUES
+(1,
+3,
+"Does not optimize solutions",
+1),
+(1,
+1,
+"Ask candidate for supporting documents next meeting",
+0),
+(1,
+2,
+"Very good with sql",
+1);
+
