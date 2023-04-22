@@ -30,8 +30,8 @@ All the work in this course is divided into two milestones, each of them has sev
 |     5       | M1: Entity Establishment Relationship Diagram  (EER)  | Done      |
 |     6       | M1: Forward Engineering and Sample Data               | Done      |
 |     7       | M1: DB Business Rules Description                     | Done      |
-|     8       | M2: Data Access Object Modeling                       | TODO      |
-|     9       | M2: Bot Setup                                         | TODO      |
+|     8       | M2: Bot Setup                                         | Done      |
+|     9       | M2: Data Access Object Modeling                       | TODO      |
 |     10      | M2: Bot Implementation & Testing                      | TODO      |
 
 

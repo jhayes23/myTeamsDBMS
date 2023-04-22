@@ -170,9 +170,9 @@ bot setup process. Please don´t hesitate to reach out the instructor for help i
 
 Once this checkpoint is completed, please fill out the following table with the following information: 
 
-|             Invite Replit Link                |             Discord Link                      |
-| ----------------------------------------------| --------------------------------------------- |
-| add here the invite replit link to your app   | add here the link to join your discord server |
+| Invite Replit Link                              | Discord Link                  |
+|-------------------------------------------------|-------------------------------|
+| https://replit.com/join/ymgfxgpskf-joshuahayes1 | https://discord.gg/BxFwvFpfgz |
 
 Once the checkpoint is submitted by its deadline, the instructor will use the above links provided by the student to grade this checkpoint. The instructor will put the bot online on Replit, and will join the Discord server to make sure that the bot is online and connected to the remote database.
 
