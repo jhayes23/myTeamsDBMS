@@ -14,13 +14,14 @@ import database as db
 token = os.environ['DISCORD_TOKEN']
 server = os.environ['DISCORD_GUILD']
 server_id = os.environ['SERVER_ID']  # optional
-channel_id = os.environ['CHANNEL_ID']  # optional
+# channel_id = os.environ['CHANNEL_ID']  # optional
 
 # database connection
 # secret keys related to your database must be updated. Otherwise, it won't work
 db_conn = db.connect()
+intents = discord.Intents.all()
 # bot events
-client = discord.Client()
+client = discord.Client(intents=intents)
 
 
 @client.event
@@ -49,8 +50,9 @@ async def on_message(message):
     else:
         # A message was send by the user.
         msg = message.content.lower()
-        if "milestone3" in msg:
-            response = "I am alive. Signed: 'your bot'"
+        response = db.response(msg)
+        # if "milestone3" in msg:
+        #     response = "I am alive. Signed: 'your bot'"
     if response:
         # bot sends response to the Discord API and the response is show
         # on the channel from your Discord server that triggered this method.
